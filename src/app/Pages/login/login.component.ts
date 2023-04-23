@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../Models/Services/auth.service';
+import { AuthService } from '../../Services/auth.service';
+import { CategoriaService } from '../../Services/categoria.service';
+import { Categoria } from '../../Models/Entity/categoria';
 
 
 @Component({
@@ -15,8 +17,8 @@ export class LoginComponent {
   password: string = "";
   loginForm: FormGroup = new FormGroup({});
   hide = true;
-
-  constructor(private authService: AuthService, private fb: FormBuilder,private router: Router) {}
+  categorias: Categoria[] = [];
+  constructor(private categoriaService:CategoriaService, private authService: AuthService, private fb: FormBuilder,private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({

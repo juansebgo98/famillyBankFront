@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './Pages/login/login.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +15,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthGuard } from './Security/auth.guard';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { NgChartsModule } from 'ng2-charts';
 
 
 registerLocaleData(localeES,'es');
@@ -43,7 +45,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatGridListModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
